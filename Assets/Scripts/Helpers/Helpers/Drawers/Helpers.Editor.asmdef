@@ -1,0 +1,19 @@
+{
+    "name": "Helpers.Editor",
+    "rootNamespace": "",
+    "references": [
+        "GUID:91c83a96500d45b4cb9c4afaaa47cbe1",
+        "GUID:dd8d1906167b4c94a838a8d7b698a0d0"
+    ],
+    "includePlatforms": [
+        "Editor"
+    ],
+    "excludePlatforms": [],
+    "allowUnsafeCode": false,
+    "overrideReferences": false,
+    "precompiledReferences": [],
+    "autoReferenced": true,
+    "defineConstraints": [],
+    "versionDefines": [],
+    "noEngineReferences": false
+}

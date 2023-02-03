@@ -1,0 +1,558 @@
+using System;
+using System.Collections.Generic;
+using System.Linq;
+using UnityEngine;
+
+public static class LayerMaskExtensions
+{
+    public static int ToSingleLayer(this LayerMask layerMask)
+    {
+        return (int)Mathf.Log(layerMask.value, 2);
+    }
+
+    public static int ToFirstValidLayer(this LayerMask layerMask)
+    {
+        int maskFirstBit = 1;
+        for (int i = 0; i < sizeof(int) * 8; i++)
+        {
+            int mask = maskFirstBit << i;
+            if ((layerMask.value & mask) != 0)
+            {
+                return (int)Mathf.Log(mask, 2);
+            }
+        }
+        return 0;
+    }
+
+    public static bool ContainsLayer(this LayerMask layermask, int layer)
+    {
+        return layermask == (layermask | (1 << layer));
+    }
+
+}
+
+public static class TransformExtensions
+{
+    /// <summary>
+    /// Sets x position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    public static void SetPositionX(this Transform transform, float x) => transform.position = transform.position.WithX(x);
+
+    /// <summary>
+    /// Sets y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetPositionY(this Transform transform, float y) => transform.position = transform.position.WithY(y);
+
+    /// <summary>
+    /// Sets z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetPositionZ(this Transform transform, float z) => transform.position = transform.position.WithZ(z);
+
+    /// <summary>
+    /// Sets x and y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetPositionXY(this Transform transform, float x, float y) => transform.position = transform.position.WithXY(x, y);
+
+    /// <summary>
+    /// Sets x and y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetPositionXY(this Transform transform, Vector2 position) => transform.position = transform.position.WithXY(position);
+
+    /// <summary>
+    /// Sets x and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetPositionXZ(this Transform transform, float x, float z) => transform.position = transform.position.WithXZ(x, z);
+
+    /// <summary>
+    /// Sets x and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetPositionXZ(this Transform transform, Vector2 position) => transform.position = transform.position.WithXZ(position);
+
+    /// <summary>
+    /// Sets y and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetPositionYZ(this Transform transform, float y, float z) => transform.position = transform.position.WithYZ(y, z);
+
+    /// <summary>
+    /// Sets y and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetPositionYZ(this Transform transform, Vector2 position) => transform.position = transform.position.WithYZ(position);
+
+    /// <summary>
+    /// Sets local x position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    public static void SetLocalPositionX(this Transform transform, float x) => transform.localPosition = transform.localPosition.WithX(x);
+
+    /// <summary>
+    /// Sets local y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalPositionY(this Transform transform, float y) => transform.localPosition = transform.localPosition.WithY(y);
+
+    /// <summary>
+    /// Sets local z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalPositionZ(this Transform transform, float z) => transform.localPosition = transform.localPosition.WithZ(z);
+
+    /// <summary>
+    /// Sets local x and y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalPositionXY(this Transform transform, float x, float y) => transform.localPosition = transform.localPosition.WithXY(x, y);
+
+    /// <summary>
+    /// Sets local x and y position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetLocalPositionXY(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithXY(position);
+
+    /// <summary>
+    /// Sets local x and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalPositionXZ(this Transform transform, float x, float z) => transform.localPosition = transform.localPosition.WithXZ(x, z);
+
+    /// <summary>
+    /// Sets local x and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetLocalPositionXZ(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithXZ(position);
+
+    /// <summary>
+    /// Sets local y and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalPositionYZ(this Transform transform, float y, float z) => transform.localPosition = transform.localPosition.WithYZ(y, z);
+
+    /// <summary>
+    /// Sets local y and z position of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="position">Position to set.</param>
+    public static void SetLocalPositionYZ(this Transform transform, Vector2 position) => transform.position = transform.localPosition.WithYZ(position);
+
+    /// <summary>
+    /// Sets euler angles x value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    public static void SetEulerAnglesX(this Transform transform, float x) => transform.eulerAngles = transform.eulerAngles.WithX(x);
+
+    /// <summary>
+    /// Sets euler angles y value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetEulerAnglesY(this Transform transform, float y) => transform.eulerAngles = transform.eulerAngles.WithY(y);
+
+    /// <summary>
+    /// Sets euler angles z value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetEulerAnglesZ(this Transform transform, float z) => transform.eulerAngles = transform.eulerAngles.WithZ(z);
+
+    /// <summary>
+    /// Sets euler angles x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetEulerAnglesXY(this Transform transform, float x, float y) => transform.eulerAngles = transform.eulerAngles.WithXY(x, y);
+
+    /// <summary>
+    /// Sets euler angles x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetEulerAnglesXY(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithXY(eulers);
+
+    /// <summary>
+    /// Sets euler angles x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetEulerAnglesXZ(this Transform transform, float x, float z) => transform.eulerAngles = transform.eulerAngles.WithXZ(x, z);
+
+    /// <summary>
+    /// Sets euler angles x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetEulerAnglesXZ(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithXZ(eulers);
+
+    /// <summary>
+    /// Sets euler angles y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetEulerAnglesYZ(this Transform transform, float y, float z) => transform.eulerAngles = transform.eulerAngles.WithYZ(y, z);
+
+    /// <summary>
+    /// Sets euler angles y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetEulerAnglesYZ(this Transform transform, Vector2 eulers) => transform.eulerAngles = transform.eulerAngles.WithYZ(eulers);
+
+    /// <summary>
+    /// Sets local euler angles x value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    public static void SetLocalEulerAnglesX(this Transform transform, float x) => transform.localEulerAngles = transform.localEulerAngles.WithX(x);
+
+    /// <summary>
+    /// Sets local euler angles y value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalEulerAnglesY(this Transform transform, float y) => transform.localEulerAngles = transform.localEulerAngles.WithY(y);
+
+    /// <summary>
+    /// Sets local euler angles z value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalEulerAnglesZ(this Transform transform, float z) => transform.localEulerAngles = transform.localEulerAngles.WithZ(z);
+
+    /// <summary>
+    /// Sets local euler angles x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalEulerAnglesXY(this Transform transform, float x, float y) => transform.localEulerAngles = transform.localEulerAngles.WithXY(x, y);
+
+    /// <summary>
+    /// Sets local euler angles x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetLocalEulerAnglesXY(this Transform transform, Vector2 eulers) => transform.localEulerAngles = transform.localEulerAngles.WithXY(eulers);
+
+    /// <summary>
+    /// Sets local euler angles x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalEulerAnglesXZ(this Transform transform, float x, float z) => transform.localEulerAngles = transform.localEulerAngles.WithXZ(x, z);
+
+    /// <summary>
+    /// Sets local euler angles x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetLocalEulerAnglesXZ(this Transform transform, Vector2 eulers) => transform.localEulerAngles = transform.localEulerAngles.WithXZ(eulers);
+
+    /// <summary>
+    /// Sets local euler angles y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalEulerAnglesYZ(this Transform transform, float y, float z) => transform.localEulerAngles = transform.localEulerAngles.WithYZ(y, z);
+
+    /// <summary>
+    /// Sets local euler angles y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="eulers">Angles to set.</param>
+    public static void SetLocalEulerAnglesYZ(this Transform transform, Vector2 eulers) => transform.localEulerAngles = transform.localEulerAngles.WithYZ(eulers);
+
+    /// <summary>
+    /// Sets local scale x value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    public static void SetLocalScaleX(this Transform transform, float x) => transform.localScale = transform.localScale.WithX(x);
+
+    /// <summary>
+    /// Sets local scale y value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalScaleY(this Transform transform, float y) => transform.localScale = transform.localScale.WithY(y);
+
+    /// <summary>
+    /// Sets local scale z value of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalScaleZ(this Transform transform, float z) => transform.localScale = transform.localScale.WithZ(z);
+
+    /// <summary>
+    /// Sets local scale x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="y">Value to set.</param>
+    public static void SetLocalScaleXY(this Transform transform, float x, float y) => transform.localScale = transform.localScale.WithXY(x, y);
+
+    /// <summary>
+    /// Sets local scale x and y values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="scale">Scale to set.</param>
+    public static void SetLocalScaleXY(this Transform transform, Vector2 scale) => transform.localScale = transform.localScale.WithXY(scale);
+
+    /// <summary>
+    /// Sets local scale x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="x">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalScaleXZ(this Transform transform, float x, float z) => transform.localScale = transform.localScale.WithXZ(x, z);
+
+    /// <summary>
+    /// Sets local scale x and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="scale">Scale to set.</param>
+    public static void SetLocalScaleXZ(this Transform transform, Vector2 scale) => transform.localScale = transform.localScale.WithXZ(scale);
+
+    /// <summary>
+    /// Sets local scale y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="y">Value to set.</param>
+    /// <param name="z">Value to set.</param>
+    public static void SetLocalScaleYZ(this Transform transform, float y, float z) => transform.localScale = transform.localScale.WithYZ(y, z);
+
+    /// <summary>
+    /// Sets local scale y and z values of transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="scale">Scale to set.</param>
+    public static void SetLocalScaleYZ(this Transform transform, Vector2 scale) => transform.localScale = transform.localScale.WithYZ(scale);
+
+    /// <summary>
+    /// Sets uniform local scale.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="scale">Uniform scale to set.</param>
+    public static void SetLocalScale(this Transform transform, float scale) => transform.localScale = transform.localScale = new Vector3(scale, scale, scale);
+
+    /// <summary>
+    /// Sets sibling index to previous.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void SetToPreviousSibling(this Transform transform) => transform.SetSiblingIndex(transform.GetSiblingIndex() - 1);
+
+    /// <summary>
+    /// Sets sibling index to next.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void SetToNextSibling(this Transform transform) => transform.SetSiblingIndex(transform.GetSiblingIndex() + 1);
+
+    /// <summary>
+    /// Returns the previous transform next to the current object. If there is no previous one, then the current transform is returned.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <returns>Previous object's transform.</returns>
+    public static Transform GetPreviousSiblingTransform(this Transform transform)
+    {
+        return transform.parent.GetChild(Mathf.Max(transform.GetSiblingIndex() - 1, 0));
+    }
+
+    /// <summary>
+    /// Returns the next transform next to the current object. If there is no next one, then the current transform is returned.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <returns>Next object's transform.</returns>
+    public static Transform GetNextSiblingTransform(this Transform transform)
+    {
+        return transform.parent.GetChild(Mathf.Min(transform.GetSiblingIndex() + 1, transform.parent.childCount - 1));
+    }
+
+    /// <summary>
+    /// Gets list of all childs.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <returns>List of all childs.</returns>
+    public static List<Transform> GetChilds(this Transform transform) => Enumerable.Range(0, transform.childCount).Select(index => transform.GetChild(index)).ToList();
+
+    /// <summary>
+    /// Gets a random child.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <returns>Random child.</returns>
+    public static Transform GetRandomChild(this Transform transform) => transform.GetChild(UnityEngine.Random.Range(0, transform.childCount));
+
+    /// <summary>
+    /// Adds childs to transform.
+    /// </summary>
+    /// <param name="childs">Childs to add.</param>
+    /// <param name="transform">Target transform.</param>
+    public static void AddChilds(this Transform transform, params Transform[] childs) => AddChilds(transform, (IEnumerable<Transform>)childs);
+
+    /// <summary>
+    /// Adds childs to transform.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="childs">Childs to add.</param>
+    public static void AddChilds(this Transform transform, IEnumerable<Transform> childs)
+    {
+        foreach (var child in childs)
+            child.parent = transform;
+    }
+
+    /// <summary>
+    /// Destroy all childs.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void DestroyChilds(this Transform transform) => GetChilds(transform).ForEach(child => GameObject.Destroy(child.gameObject));
+
+    /// <summary>
+    /// Destroy all childs by coindition.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="predicate">Condition.</param>
+    public static void DestroyChildsWhere(this Transform transform, Predicate<Transform> predicate)
+    {
+        var filtered = GetChilds(transform).Where(c => predicate(c));
+
+        foreach (var child in filtered)
+            GameObject.Destroy(child.gameObject);
+    }
+
+    /// <summary>
+    /// Destroy child by index.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void DestroyChild(this Transform transform, int index) => GameObject.Destroy(transform.GetChild(index).gameObject);
+
+    /// <summary>
+    /// Destroy first child.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void DestroyFirstChild(this Transform transform) => DestroyChild(transform, 0);
+
+    /// <summary>
+    /// Destroy last child.
+    /// </summary>
+    /// <param name="transform">Target transform.</param>
+    public static void DestroyLastChild(this Transform transform) => DestroyChild(transform, transform.childCount - 1);
+
+    /// <summary>
+    /// <inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInChildren{T}(GameObject, bool)"/>
+    /// </summary>
+    /// <typeparam name="T"><inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInChildren{T}(GameObject, bool)"/></typeparam>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="enabled"><inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInChildren{T}(GameObject, bool)" path="/param[@name='enabled']"/></param>
+    public static void SetComponentsEnabledInChildren<T>(this Transform transform, bool enabled) where T : MonoBehaviour
+    {
+        transform.gameObject.SetComponentsEnabledInChildren<T>(enabled);
+    }
+
+    /// <summary>
+    /// <inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInParents{T}(GameObject, bool)"/>
+    /// </summary>
+    /// <typeparam name="T"><inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInParents{T}(GameObject, bool)"/></typeparam>
+    /// <param name="transform">Target transform.</param>
+    /// <param name="enabled"><inheritdoc cref="GameObjectExtensions.SetComponentsEnabledInParents{T}(GameObject, bool)" path="/param[@name='enabled']"/></param>
+    public static void SetComponentsEnabledInParents<T>(this Transform transform, bool enabled) where T : MonoBehaviour
+    {
+        transform.gameObject.SetComponentsEnabledInParents<T>(enabled);
+    }
+
+    public static Vector3 GetShiftedtLocalPosition(this Transform transform, Vector3 startPosition, Vector3 offsetVector)
+    {
+        Transform parent = transform.parent;
+        Vector3 offsetedWorldPosition = startPosition + offsetVector;
+        Vector3 offsetedLocalPosition = parent != null ? parent.InverseTransformPoint(offsetedWorldPosition) : offsetedWorldPosition;
+        return offsetedLocalPosition;
+    }
+
+    public static Vector3 GetLocalDirectionAxis(this Transform transform, Axis axis)
+    {
+        switch (axis)
+        {
+            case Axis.X:
+                return transform.right;
+            case Axis.Y:
+                return transform.up;
+            case Axis.Z:
+                return transform.forward;
+            default:
+                Debug.LogWarning("Axis is None");
+                return Vector3.zero;
+        }
+    }
+
+    public static void SetParentPreserveScale(this Transform transform, Transform parent)
+    {
+        Vector3 prevScale = transform.lossyScale;
+        transform.SetParent(parent);
+        transform.SetGlobalScale(prevScale);
+    }
+
+    public static void SetGlobalScale(this Transform transform, Vector3 scale)
+    {
+        if(transform.parent == null)
+        {
+            transform.localScale = scale;
+            return;
+        }
+        var parentScale = transform.parent.lossyScale;
+        transform.localScale = scale.GetDivided(parentScale); 
+    }
+
+    public static IEnumerable<Transform> GetHierarchyTopToBottomEnumeratorFromChild(this Transform childTransform)
+    {
+        if (childTransform.IsNullWithErrorLog())
+        {
+            yield break;
+        }
+        Stack<Transform> trasnformHierarchyStack = new(4);
+        trasnformHierarchyStack.Push(childTransform);
+        Transform parent = childTransform.parent;
+        while(parent != null)
+        {
+            trasnformHierarchyStack.Push(parent);
+            parent = parent.parent;
+        }
+        int stackSize = trasnformHierarchyStack.Count;
+        for (int i = 0; i < stackSize; i++)
+        {
+            yield return trasnformHierarchyStack.Pop();
+        }
+    }
+}

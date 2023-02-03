@@ -1,0 +1,52 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 5b11a58205ec3474ca216360e9fa74a8, type: 3}
+  m_Name: UnityInputSystem Shared Data
+  m_EditorClassIdentifier: 
+  m_TableCollectionName: UnityInputSystem
+  m_TableCollectionNameGuidString: 2bc4787453865844f9f3e9208b9b03c1
+  m_Entries:
+  - m_Id: 398661492736
+    m_Key: Hold
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25866047561728
+    m_Key: Default Interaction Name
+    m_Metadata:
+      m_Items: []
+  - m_Id: 25944950808576
+    m_Key: And
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60251203411968
+    m_Key: Default Keyboard Interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 60362184695808
+    m_Key: Default Mouse Interaction
+    m_Metadata:
+      m_Items: []
+  - m_Id: 43508718625857536
+    m_Key: Train completed loop
+    m_Metadata:
+      m_Items: []
+  m_Metadata:
+    m_Items: []
+  m_KeyGenerator:
+    rid: 98422904725176323
+  references:
+    version: 2
+    RefIds:
+    - rid: 98422904725176323
+      type: {class: DistributedUIDGenerator, ns: UnityEngine.Localization.Tables, asm: Unity.Localization}
+      data:
+        m_CustomEpoch: 1662370740175
