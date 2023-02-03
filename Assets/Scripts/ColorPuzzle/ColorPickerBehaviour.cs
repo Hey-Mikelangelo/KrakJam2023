@@ -33,6 +33,7 @@ public class ColorPickerBehaviour : MonoBehaviour
             }
         }
         SubscribeToColorButtons();
+        OnColorButtonClick(colorSelectButtons[0]);
     }
     private void OnDestroy()
     {
