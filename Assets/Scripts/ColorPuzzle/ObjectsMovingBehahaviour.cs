@@ -38,7 +38,7 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
     {
         smoothPosition.Update();
         var selectedInteractable = InteractableSelection.SelectedInteractable;
-        if(selectedInteractable.TryGetComponent(out MovableObjectTag _) == false)
+        if(selectedInteractable != null && selectedInteractable.TryGetComponent(out MovableObjectTag _) == false)
         {
             return;
         }
