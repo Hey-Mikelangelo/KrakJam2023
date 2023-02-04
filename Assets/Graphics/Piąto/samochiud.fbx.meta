@@ -3,7 +3,42 @@ guid: df768c9c41ff4084a9d0a927bb5f3359
 ModelImporter:
   serializedVersion: 21300
   internalIDToNameTable: []
-  externalObjects: {}
+  externalObjects:
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.001
+    second: {fileID: 2100000, guid: ae0a24b838e220a4d9c98843f9aa0f65, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.002
+    second: {fileID: 2100000, guid: 5f38368069d97074b86a57f739cb1d87, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: Material.004
+    second: {fileID: 2100000, guid: 3a4c01ab0c3e139478ae318b65b92f16, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: chrome
+    second: {fileID: 2100000, guid: acc7d7102d3ebe74c8f8629d33d74091, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: karoseria
+    second: {fileID: 2100000, guid: 5c22e3f32b78ef845a6be4fab24ac20b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: opona
+    second: {fileID: 2100000, guid: a4ba949769fb3c34aae154775671c53b, type: 2}
+  - first:
+      type: UnityEngine:Material
+      assembly: UnityEngine.CoreModule
+      name: "\u015Bwiat\u0142a"
+    second: {fileID: 2100000, guid: 9d0e49e41b829af44ba51374d90f179f, type: 2}
   materials:
     materialImportMode: 2
     materialName: 0
