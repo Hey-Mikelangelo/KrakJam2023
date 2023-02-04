@@ -3,7 +3,7 @@ using UnityEngine;
 
 public abstract class ValueSO<T> : ScriptableObject
 {
-    [ShowInInspector] public T Value
+    [ShowInInspector, ReadOnly] public T Value
     {
         get => value;
         set
@@ -16,6 +16,6 @@ public abstract class ValueSO<T> : ScriptableObject
             OnValueChanged?.Invoke();
         }
     }
-    private T value;
+   [SerializeField] private T value;
     public event System.Action OnValueChanged;
 }
