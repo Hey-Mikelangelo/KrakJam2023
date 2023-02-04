@@ -166,7 +166,7 @@ Transform:
   m_ConstrainProportionsScale: 0
   m_Children: []
   m_Father: {fileID: 0}
-  m_RootOrder: 4
+  m_RootOrder: 5
   m_LocalEulerAnglesHint: {x: 0, y: 0, z: 0}
 --- !u!1 &327987650
 GameObject:
@@ -310,7 +310,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df768c9c41ff4084a9d0a927bb5f3359, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -3.07
+      value: 9.38
       objectReference: {fileID: 0}
     - target: {fileID: -8679921383154817045, guid: df768c9c41ff4084a9d0a927bb5f3359, type: 3}
       propertyPath: m_LocalRotation.w
@@ -346,6 +346,11 @@ PrefabInstance:
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: df768c9c41ff4084a9d0a927bb5f3359, type: 3}
+--- !u!23 &362421848 stripped
+MeshRenderer:
+  m_CorrespondingSourceObject: {fileID: -7511558181221131132, guid: df768c9c41ff4084a9d0a927bb5f3359, type: 3}
+  m_PrefabInstance: {fileID: 362421847}
+  m_PrefabAsset: {fileID: 0}
 --- !u!1 &441156534
 GameObject:
   m_ObjectHideFlags: 0
@@ -973,12 +978,12 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   colorSelectButtons:
+  - {fileID: 543249486}
   - {fileID: 327987652}
   - {fileID: 1812652482}
-  - {fileID: 1217550720}
-  - {fileID: 543249486}
   - {fileID: 441156536}
-  colorSO: {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  - {fileID: 1217550720}
+  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
 --- !u!114 &1363151892
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -988,11 +993,12 @@ MonoBehaviour:
   m_GameObject: {fileID: 1363151888}
   m_Enabled: 1
   m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: c774cfab8ba521c44b9c6008885d5522, type: 3}
+  m_Script: {fileID: 11500000, guid: 5e49d1ce8300bab4db6972fbcbc45f95, type: 3}
   m_Name: 
   m_EditorClassIdentifier: 
-  image: {fileID: 862460158}
-  colorSO: {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  meshRenderer: {fileID: 362421848}
+  materialIndex: 1
+  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
 --- !u!1 &1429174768
 GameObject:
   m_ObjectHideFlags: 0
