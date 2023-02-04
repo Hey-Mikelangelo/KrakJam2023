@@ -81,14 +81,9 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
         {
             position = ray.origin;
         }
-        if (movementModeSO.Value == MovementMode.Side2d)
-        {
-            return position.GetVector2WithRemovedValueOnAxis(Axis.Z);
-        }
-        else
-        {
-            return position.WithValueOnAxis(Axis.Y, 0);
-        }
+        return movementModeSO.Value == MovementMode.Side2d
+                ? position.GetVector2WithRemovedValueOnAxis(Axis.Z)
+                : position.WithValueOnAxis(Axis.Y, 0);
     }
 
     private bool TryGetSnapPosition(RaycastHit[] hits, int count, out Vector3 snapPosition)

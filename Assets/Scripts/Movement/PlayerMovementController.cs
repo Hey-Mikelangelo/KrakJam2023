@@ -6,8 +6,10 @@ using UnityEngine.InputSystem;
 public class PlayerMovementController : PlayerController
 {
     [SerializeField, Required] private InputActionReference moveActionRef;
+    [SerializeField, Required] private CameraGuidReference cameraRef;
     [SerializeField, Required] private MovementModeSO movementModeSO;
     [SerializeField] private float moveSpeed = 1;
+    [SerializeField] private float noMovementDistance = 0.01f;
     [SerializeField, Required] private SmoothMovementBehaviour smoothMovementBehaviour;
     private InputAction moveAction;
     [ShowInInspector, ReadOnly] public bool IsMoving { get; private set; }
@@ -25,14 +27,35 @@ public class PlayerMovementController : PlayerController
         {
             return;
         }
-        var moveDirection2d = moveAction.ReadValue<Vector2>();
+        /*var moveDirection2d = moveAction.ReadValue<Vector2>();
         moveDirection2d.Normalize();
-        IsMoving = moveDirection2d.magnitude != 0;
+        IsMoving = moveDirection2d.magnitude != 0;*/
+        var move = moveAction.ReadValue<float>();
+        if(move == 0)
+        {
+            return;
+        }
+        var ray = RaycastUtils.GetMousePositionRay(cameraRef.Component);
+        Vector3 position = ray.origin;
+
+        var moveDirection = position - this.transform.position;
+
+        var moveDirection2d = movementModeSO.Value == MovementMode.Side2d
+            ? moveDirection.GetVector2WithRemovedValueOnAxis(Axis.Z)
+                : moveDirection.GetVector2WithRemovedValueOnAxis(Axis.Y);
+
+        IsMoving = moveDirection2d.magnitude > noMovementDistance;
+        if(IsMoving == false)
+        {
+            return;
+        }
         Move(moveDirection2d);
     }
 
     public void Move(Vector2 moveDirection2d)
     {
+
+
         moveDirection2d.Normalize();
         if (moveDirection2d.magnitude == 0)
         {
@@ -78,7 +101,7 @@ public class PlayerMovementController : PlayerController
         smoothMovementBehaviour.TargetRotation = rotation;
     }
 
-   
+
 
     public override void SetActiveCamera()
     {

@@ -168,6 +168,7 @@ namespace InteractionSystem
                     selectedInteractable.Select(Interactable.State.HightlightedBlocked, selectionPoint);
                 }
             }
+
             InteractableSelection.HightlightedInteractable = highlightedInteractable;
             InteractableSelection.SelectedIgnoreBlockedInteractable = selectedInteractable;
             InteractableSelection.SelectedInteractable = canInteract || lockedInteractable == selectedInteractable ? selectedInteractable : null;

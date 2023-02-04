@@ -5,4 +5,5 @@ using UnityEngine;
 public class ColorSO : ValueSO<Color>
 {
 
+    
 }
