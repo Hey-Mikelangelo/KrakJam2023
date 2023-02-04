@@ -490,6 +490,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: Keypass
       objectReference: {fileID: 0}
+    - target: {fileID: 3938775625123063671, guid: c581ac8bd9d017e4db41cf4a652883a0, type: 3}
+      propertyPath: keyButtons.Array.size
+      value: 10
+      objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: c581ac8bd9d017e4db41cf4a652883a0, type: 3}
 --- !u!1001 &3392198771193184808
