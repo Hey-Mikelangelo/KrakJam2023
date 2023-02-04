@@ -249,7 +249,7 @@ public static class IEnumerableExtensions
         return otherEnumerable.All(enumerable.Contains<T>) && enumerable.Count() == otherEnumerable.Count();
     }
 
-    public static bool ItemsSequenceEqual<T>(this IList<T> list1, IList<T> list2)
+    public static bool ItemsSequenceEqual<T>(this IReadOnlyList<T> list1, IReadOnlyList<T> list2)
     {
         int count = list1.Count;
         int otherCount = list2.Count;
