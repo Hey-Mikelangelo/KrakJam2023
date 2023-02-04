@@ -38,6 +38,10 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
     {
         smoothPosition.Update();
         var selectedInteractable = InteractableSelection.SelectedInteractable;
+        if(selectedInteractable.TryGetComponent(out MovableObjectTag _) == false)
+        {
+            return;
+        }
         if (prevMovedInteractable != selectedInteractable)
         {
             prevMovedInteractable = selectedInteractable;
@@ -48,16 +52,13 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
         }
         if (selectedInteractable != null && move)
         {
-            
             var pointerPosition = GetPointerPosition();
             var toPointerVector = pointerPosition - playerController.transform.position;
             if (toPointerVector.magnitude > pickingRange)
             {
                 if (playerController.IsMoving == false)
                 {
-                    Vector2 toPointerVector2d = movementModeSO.Value == MovementMode.Side2d
-                        ? toPointerVector.GetVector2WithRemovedValueOnAxis(Axis.Z)
-                        : toPointerVector.GetVector2WithRemovedValueOnAxis(Axis.Y);
+                    Vector2 toPointerVector2d = toPointerVector.GetVector2WithRemovedValueOnAxis(Axis.Z);
                     playerController.Move(toPointerVector2d);
                 }
                 toPointerVector = toPointerVector.normalized * pickingRange;
@@ -81,9 +82,7 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
         {
             position = ray.origin;
         }
-        return movementModeSO.Value == MovementMode.Side2d
-                ? position.GetVector2WithRemovedValueOnAxis(Axis.Z)
-                : position.WithValueOnAxis(Axis.Y, 0);
+        return position.WithValueOnAxis(Axis.Z, 0);
     }
 
     private bool TryGetSnapPosition(RaycastHit[] hits, int count, out Vector3 snapPosition)
