@@ -14,7 +14,7 @@ public abstract class PlayerController : MonoBehaviour
     private static List<PlayerController> playerControllers = new List<PlayerController>();
     public static PlayerController ActiveController { get; private set; }
     public static event System.Action OnActiveControllerChanged;
-    public bool IsInputActive { get; private set; }
+    public bool IsInputActive { get; private set; } = true;
     //protected abstract IInputComponentData InputComponentData { get; }
 
     private void Awake()

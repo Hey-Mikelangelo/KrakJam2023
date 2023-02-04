@@ -12,7 +12,7 @@ namespace InteractionSystem
         }
         public override bool IsBlocking()
         {
-            return Vector3.Distance(Player.Instance.transform.position, interactable.transform.position) > maxDistance;
+            return Vector2.Distance(Player.Instance.transform.position, interactable.transform.position) > maxDistance;
         }
     }
 }
