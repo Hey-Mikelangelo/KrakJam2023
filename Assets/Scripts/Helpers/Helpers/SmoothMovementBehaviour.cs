@@ -6,12 +6,12 @@ public class SmoothMovementBehaviour : MonoBehaviour
     [SerializeField, OnValueChanged(nameof(UpdateSmoothPositionSmoothingTime))] private float movementSmoothingTime = 0.1f;
     [SerializeField, OnValueChanged(nameof(UpdateSmoothRotationSmoothingTime))] private float rotationSmoothingTime = 0.1f;
     [SerializeField, Required] private Transform movedTransform;
+    public Transform MovedTransform => movedTransform;
     private float movementSmoothingTimeOverride = -1;
     private float rotationSmoothingTimeOverride = -1;
 
     private SmoothVector3 smoothPosition;
     private SmoothQuaternion smoothRotation;
-
     public Vector3 TargetPosition
     {
         get => smoothPosition.TargetValue;

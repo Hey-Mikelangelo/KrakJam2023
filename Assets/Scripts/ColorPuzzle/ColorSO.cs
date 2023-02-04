@@ -2,23 +2,7 @@
 using UnityEngine;
 
 [CreateAssetMenu]
-public class ColorSO : ScriptableObject
+public class ColorSO : ValueSO<Color>
 {
-    [ShowInInspector] public Color Value
-    {
-        get => value;
-        set
-        {
-            if(this.value == value)
-            {
-                return;
-            }
-            this.value = value;
-            OnValueChanged?.Invoke();
-        }
-    }
-
-    private Color value;
-    public event System.Action OnValueChanged;
 
 }
