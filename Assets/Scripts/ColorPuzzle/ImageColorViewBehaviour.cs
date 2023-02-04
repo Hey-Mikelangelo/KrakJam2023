@@ -2,7 +2,8 @@
 using UnityEngine;
 using UnityEngine.UI;
 
-public class ColorViewBehaviour : MonoBehaviour
+
+public class ImageColorViewBehaviour : MonoBehaviour
 {
     [SerializeField, Required] private Image image;
     [SerializeField, Required] private ColorSO colorSO;
