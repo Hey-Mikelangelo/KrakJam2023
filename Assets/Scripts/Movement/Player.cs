@@ -3,6 +3,6 @@ using UnityEngine;
 
 public class Player : Singleton<Player>
 {
-    [SerializeField, Required] private PlayerController playerController;
-    public PlayerController PlayerController => playerController;
+    [SerializeField, Required] private PlayerMovementController playerController;
+    public PlayerMovementController PlayerController => playerController;
 }

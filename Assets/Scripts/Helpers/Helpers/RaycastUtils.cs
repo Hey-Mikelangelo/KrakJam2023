@@ -5,6 +5,10 @@ public static class RaycastUtils
 {
     public static Ray GetMousePositionRay(Camera camera)
     {
+        if (camera.IsNullWithErrorLog())
+        {
+            return default;
+        }
         var mouse = Mouse.current;
         Vector2 screenPosition = mouse.position.ReadValue();
         screenPosition.x = Mathf.Clamp(screenPosition.x, 0, Screen.width);

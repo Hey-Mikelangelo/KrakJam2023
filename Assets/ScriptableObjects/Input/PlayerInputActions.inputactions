@@ -13,6 +13,24 @@
                     "processors": "",
                     "interactions": "",
                     "initialStateCheck": true
+                },
+                {
+                    "name": "StartMovingObject",
+                    "type": "Button",
+                    "id": "f1ba21ea-e729-4ae6-8814-997287bcfb59",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
+                },
+                {
+                    "name": "StopMovingObject",
+                    "type": "Button",
+                    "id": "ecd4addd-8317-4be3-a0f1-e886eeecfee6",
+                    "expectedControlType": "Button",
+                    "processors": "",
+                    "interactions": "",
+                    "initialStateCheck": false
                 }
             ],
             "bindings": [
@@ -70,6 +88,28 @@
                     "action": "Move",
                     "isComposite": false,
                     "isPartOfComposite": true
+                },
+                {
+                    "name": "",
+                    "id": "5dd009e0-91d1-4ad7-895b-135a10bf34b6",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StartMovingObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "3d99351e-5119-4e68-bb62-2da6857324aa",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "StopMovingObject",
+                    "isComposite": false,
+                    "isPartOfComposite": false
                 }
             ]
         },
@@ -119,23 +159,23 @@
                 },
                 {
                     "name": "",
-                    "id": "3100b302-9788-49a7-8ae1-beaab88a7aee",
-                    "path": "<Keyboard>/escape",
-                    "interactions": "",
-                    "processors": "",
-                    "groups": "",
-                    "action": "CancelLockSelection",
-                    "isComposite": false,
-                    "isPartOfComposite": false
-                },
-                {
-                    "name": "",
                     "id": "b69394c3-aca7-4abc-a32b-a70188c50d1f",
                     "path": "<Keyboard>/e",
                     "interactions": "",
                     "processors": "",
                     "groups": "",
                     "action": "Interact1",
+                    "isComposite": false,
+                    "isPartOfComposite": false
+                },
+                {
+                    "name": "",
+                    "id": "637e1b22-0c18-4ad2-855d-395926c16c7a",
+                    "path": "<Mouse>/leftButton",
+                    "interactions": "Press(behavior=1)",
+                    "processors": "",
+                    "groups": "",
+                    "action": "CancelLockSelection",
                     "isComposite": false,
                     "isPartOfComposite": false
                 }
