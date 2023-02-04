@@ -36,6 +36,7 @@ namespace InteractionSystem
             RefreshInteractionActionsArray();
             FillInputActionsArray();
             SubscribeToInteractionActionsEnabledStatusChange();
+            Deselect();
         }
         private void OnDestroy()
         {
