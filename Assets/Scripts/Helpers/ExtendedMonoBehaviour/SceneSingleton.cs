@@ -5,7 +5,7 @@ using UnityEngine.SceneManagement;
 
 namespace EditorHelpers
 {
-    public abstract class SceneSingleton<T> : AdvancedMonoBehaviour<T> where T : SceneSingleton<T>
+    public abstract class SceneSingleton<T> : MonoBehaviour where T : SceneSingleton<T>
     {
         public static bool IsReady => FindObjectOfType<T>() != null;
         public static T FirstInstance

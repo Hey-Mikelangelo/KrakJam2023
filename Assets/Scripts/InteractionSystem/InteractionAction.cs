@@ -92,7 +92,7 @@ namespace InteractionSystem
             onCancelled.Invoke();
         }
 
-        private void OnInteractableSelected(Vector3 selectionPoint)
+        private void OnInteractableSelected()
         {
             if (triggerringActionReference.action.Is_Not_NullWithErrorLog())
             {

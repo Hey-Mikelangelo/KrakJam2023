@@ -72,12 +72,12 @@ public class CrossSceneReferencesManager : SceneSingleton<CrossSceneReferencesMa
         }
     }
 #endif
-    public override void OnInit()
+    private void Awake()
     {
-        base.OnInit();
         LoadSceneReferences();
-    }
 
+    }
+    
     private void LoadSceneReferences(bool forceLoad = false)
     {
         if (loadedReferences && forceLoad == false)
@@ -95,15 +95,8 @@ public class CrossSceneReferencesManager : SceneSingleton<CrossSceneReferencesMa
         }
     }
 
-    public override void OnBeforeUnloaded()
+    private void OnDestroy()
     {
-        base.OnBeforeUnloaded();
-        RemoveThisSceneObjects();
-    }
-
-    protected override void OnDestroy()
-    {
-        base.OnDestroy();
         RemoveThisSceneObjects();
     }
     private void RemoveThisSceneObjects()
