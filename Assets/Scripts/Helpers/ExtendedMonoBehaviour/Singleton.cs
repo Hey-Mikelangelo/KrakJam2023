@@ -5,7 +5,7 @@ using UnityEngine;
 using UnityEngine.SceneManagement;
 
 
-public abstract class Singleton<T> : AdvancedMonoBehaviour<T> where T : Singleton<T>
+public abstract class Singleton<T> : MonoBehaviour where T : Singleton<T>
 {
     public static bool Quitting { get; private set; }
     public static bool IsReady => _instance != null || FindObjectOfType<T>() != null;
@@ -52,9 +52,8 @@ public abstract class Singleton<T> : AdvancedMonoBehaviour<T> where T : Singleto
         }
     }
 
-    protected override void Awake()
+    protected virtual void Awake()
     {
-        base.Awake();
         if(_instance == null)
         {
             _instance = this as T;

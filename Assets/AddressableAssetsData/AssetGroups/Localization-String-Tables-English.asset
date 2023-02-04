@@ -16,12 +16,7 @@ MonoBehaviour:
   m_Data:
     m_SerializedData: []
   m_GUID: b624b779fbc4fef47b482408ae0fbd90
-  m_SerializeEntries:
-  - m_GUID: 5f63f4df30625724ea5c9d1c142c4e7f
-    m_Address: UnityInputSystem_en
-    m_ReadOnly: 1
-    m_SerializedLabels:
-    - Locale-en
+  m_SerializeEntries: []
   m_ReadOnly: 1
   m_Settings: {fileID: 11400000, guid: 5b221fbabf18ca241be14cc7f6e69d8e, type: 2}
   m_SchemaSet:

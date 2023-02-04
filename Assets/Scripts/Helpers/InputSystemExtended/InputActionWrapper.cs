@@ -14,7 +14,7 @@ public class InputActionWrapper
         Action onStartedAction = null,
         Action onCancelledAction = null)
     {
-        InputAction = InputSystemExtensions.GetDefaultPlayerInput().actions[inputAction.id.ToString()];
+        InputAction = inputAction;
         this.onPerformedAction = onPerformedAction;
         this.onStartedAction = onStartedAction;
         this.onCancelledAction = onCancelledAction;
