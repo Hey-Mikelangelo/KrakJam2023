@@ -126,11 +126,6 @@ namespace InteractionSystem
             var highlightedInteractable = GetHightlightedInteractable(pointedByCursorInteractable);
             var selectedInteractable = GetSelectedInteractable(highlightedInteractable);
 
-            InteractableSelection.HightlightedInteractable = highlightedInteractable;
-            InteractableSelection.SelectedIgnoreBlockedInteractable = selectedInteractable;
-            InteractableSelection.SelectedInteractable = canInteract || lockedInteractable == selectedInteractable ? selectedInteractable : null;
-            InteractableSelection.AllHitInteractables = allHitInteractables;
-
             if (selectedInteractable != null && selectedInteractable.NeedsLockingToSelect && canInteract)
             {
                 lockedInteractable = selectedInteractable;
@@ -173,6 +168,11 @@ namespace InteractionSystem
                     selectedInteractable.Select(Interactable.State.HightlightedBlocked, selectionPoint);
                 }
             }
+            InteractableSelection.HightlightedInteractable = highlightedInteractable;
+            InteractableSelection.SelectedIgnoreBlockedInteractable = selectedInteractable;
+            InteractableSelection.SelectedInteractable = canInteract || lockedInteractable == selectedInteractable ? selectedInteractable : null;
+            InteractableSelection.AllHitInteractables = allHitInteractables;
+
             pressedLockInteractableSelection = false;
 
         }

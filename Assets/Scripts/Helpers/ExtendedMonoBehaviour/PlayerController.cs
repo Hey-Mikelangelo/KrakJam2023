@@ -5,7 +5,7 @@ using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
 
-public abstract class PlayerController : AdvancedMonoBehaviour
+public abstract class PlayerController : MonoBehaviour
 {
     [SerializeField, OdinSerialize] private UltEvent<bool> onActivateStateChanged = new UltEvent<bool>();
     [SerializeField] public UltEvent onActivated = new UltEvent();
@@ -17,23 +17,21 @@ public abstract class PlayerController : AdvancedMonoBehaviour
     public bool IsInputActive { get; private set; }
     //protected abstract IInputComponentData InputComponentData { get; }
 
-    public override void OnInit()
+    private void Awake()
     {
-        base.OnInit();
         enabled = false;
         playerControllers.Add(this);
     }
     
-    public override void OnLoaded()
+    private void Start()
     {
-        base.OnLoaded();
         InvokeActivatedEvents(this);
     }
 
-    public override void OnBeforeUnloaded()
+    private void OnDestroy()
     {
-        base.OnBeforeUnloaded();
         playerControllers.Remove(this);
+
     }
 
     protected virtual void OnActiveStateChanged() { }
@@ -57,11 +55,6 @@ public abstract class PlayerController : AdvancedMonoBehaviour
     }
     public static void Activate(PlayerController playerController)
     {
-        if(playerController.IsInited == false)
-        {
-            return;
-        }
-        playerController.EnsureLoaded();
         if (playerController.IsNullWithErrorLog())
         {
             return;
@@ -95,16 +88,14 @@ public abstract class PlayerController : AdvancedMonoBehaviour
         
     }
 
-    protected override void OnEnable()
+    private void OnEnable()
     {
-        base.OnEnable();
         SetInputActive(true);
         InvokeActivatedEvents(this);
     }
 
-    protected override void OnDisable()
+    private void OnDisable()
     {
-        base.OnDisable();
         SetInputActive(false);
         InvokeActivatedEvents(this);
     }

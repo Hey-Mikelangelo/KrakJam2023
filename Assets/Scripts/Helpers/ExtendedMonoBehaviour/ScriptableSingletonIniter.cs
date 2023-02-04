@@ -5,13 +5,12 @@ using UnityEngine;
 
 
 
-public class ScriptableSingletonIniter : AdvancedMonoBehaviour
+public class ScriptableSingletonIniter : MonoBehaviour
 {
     [SerializeField, Required] private ScriptableSingleton scriptableSingleton;
 
-    public override void OnInit()
+    private void Awake()
     {
-        base.OnInit();
         if (scriptableSingleton.IsSet == false)
         {
             scriptableSingleton.Awake();

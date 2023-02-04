@@ -4,6 +4,8 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.InputSystem;
+
+
 namespace InteractionSystem
 {
     public sealed class Interactable : MonoBehaviour
@@ -13,8 +15,7 @@ namespace InteractionSystem
         [SerializeField] private InteractableCollider interactableCollider;
         [SerializeField] private bool needsLockingToSelect;
         [SerializeField] private bool controlCollidersEnabledStatus = true;
-        [SerializeField, OdinSerialize] public UltEvent<Vector3> OnSelected = new();
-        [SerializeField, OdinSerialize] public UltEvent<Vector3> OnWhileSelected = new();
+        [SerializeField, OdinSerialize] public UltEvent OnSelected = new();
         [SerializeField, OdinSerialize] public UltEvent OnDeselected = new();
         [SerializeField, OdinSerialize] public UltEvent<bool> OnEnabledStatusChanged = new();
         public event System.Action OnHightlighted;
@@ -189,16 +190,12 @@ namespace InteractionSystem
                 }
                 if (isSelected)
                 {
-                    OnSelected.Invoke(selectionPoint);
+                    OnSelected.Invoke();
                 }
                 else
                 {
                     OnDeselected.Invoke();
                 }
-            }
-            if (isSelected)
-            {
-                OnWhileSelected.Invoke(selectionPoint);
             }
         }
 
