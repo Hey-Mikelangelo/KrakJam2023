@@ -35,7 +35,7 @@ public class AgeLockSequencePickerBehaviour : MonoBehaviour
 
     public void Submit()
     {
-        var birthYear = currentYearSO.Value - age;
+        var birthYear =2023 - age;
         ageLockCombinationSO.Value = birthYear.ToDigitsList();
         ageValueSO.Value = age;
     }

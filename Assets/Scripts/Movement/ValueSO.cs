@@ -7,7 +7,7 @@ public abstract class ValueSO<T> : ScriptableObject
         get => value;
         set
         {
-            if (this.value.Equals(value))
+            if (this.value == null || this.value.Equals(value))
             {
                 return;
             }
@@ -15,6 +15,6 @@ public abstract class ValueSO<T> : ScriptableObject
             OnValueChanged?.Invoke();
         }
     }
-   [SerializeField] private T value;
+   private T value;
     public event System.Action OnValueChanged;
 }
