@@ -147,7 +147,9 @@ MonoBehaviour:
     cachedName: 
     cachedScene: {fileID: 0}
     componentReference: {fileID: 0}
+  visualsTransform: {fileID: 5933281843049110616}
   movementMode: 1
+  movementDampingPercent: 0
   moveSpeed: 5
   noMovementDistance: 1.25
   rotationSmoothing: 0.1

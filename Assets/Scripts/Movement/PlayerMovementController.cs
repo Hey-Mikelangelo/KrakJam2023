@@ -12,6 +12,7 @@ public class PlayerMovementController : PlayerController
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField, Required] private InputActionReference moveActionRef;
     [SerializeField, Required] private CameraGuidReference cameraRef;
+    [SerializeField, Required] private Transform visualsTransform;
     [SerializeField] private MovementMode movementMode = MovementMode.TopDown2d;
     [SerializeField] private float movementDampingPercent = 0;
     [SerializeField] private float moveSpeed = 1;
@@ -109,13 +110,13 @@ public class PlayerMovementController : PlayerController
         }
         else
         {
-            if (direction2d.x > 0 && transform.localScale.x < 0)
+            if (direction2d.x > 0)
             {
-                transform.localScale = -transform.localScale;
+                visualsTransform.localScale = visualsTransform.localScale.WithX(1);
             }
-            else if (direction2d.x < 0 && transform.localScale.x > 0)
+            else if (direction2d.x < 0)
             {
-                transform.localScale = -transform.localScale;
+                visualsTransform.localScale = visualsTransform.localScale.WithX(-1);
             }
         }
 
