@@ -234,6 +234,7 @@ GameObject:
   - component: {fileID: 77884459140192263}
   - component: {fileID: 77884459140192260}
   - component: {fileID: 77884459140192261}
+  - component: {fileID: 8322122329128108976}
   m_Layer: 0
   m_Name: Dziadzio
   m_TagString: Untagged
@@ -343,11 +344,31 @@ MonoBehaviour:
   - {fileID: 77884458319070655}
   - {fileID: 77884459692092286}
   m_Bounds:
-    m_Center: {x: -0.822006, y: 0.12646532, z: 0}
-    m_Extent: {x: 2.6495013, y: 3.522663, z: 0}
+    m_Center: {x: -0.822006, y: 0.12646556, z: 0}
+    m_Extent: {x: 2.6495008, y: 3.522663, z: 0}
   m_UseBatching: 1
   m_AlwaysUpdate: 1
   m_AutoRebind: 0
+--- !u!95 &8322122329128108976
+Animator:
+  serializedVersion: 5
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 77884459140192266}
+  m_Enabled: 1
+  m_Avatar: {fileID: 0}
+  m_Controller: {fileID: 9100000, guid: a1344d38556334f4397ac0a17319d35a, type: 2}
+  m_CullingMode: 0
+  m_UpdateMode: 0
+  m_ApplyRootMotion: 0
+  m_LinearVelocityBlending: 0
+  m_StabilizeFeet: 0
+  m_WarningMessage: 
+  m_HasTransformHierarchy: 1
+  m_AllowConstantClipSamplingOptimization: 1
+  m_KeepAnimatorStateOnDisable: 0
 --- !u!1 &77884459157250610
 GameObject:
   m_ObjectHideFlags: 0
