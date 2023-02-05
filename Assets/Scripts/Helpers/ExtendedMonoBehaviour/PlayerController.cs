@@ -95,13 +95,13 @@ public abstract class PlayerController : MonoBehaviour
         
     }
 
-    private void OnEnable()
+    protected virtual void OnEnable()
     {
         SetInputActive(true);
         InvokeActivatedEvents(this);
     }
 
-    private void OnDisable()
+    protected virtual void OnDisable()
     {
         SetInputActive(false);
         InvokeActivatedEvents(this);

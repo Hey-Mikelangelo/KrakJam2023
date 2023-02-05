@@ -9,7 +9,7 @@ public class PlayerMovementController : PlayerController
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField, Required] private InputActionReference moveActionRef;
     [SerializeField, Required] private CameraGuidReference cameraRef;
-    [SerializeField] private MovementMode movementMode; 
+    [SerializeField] private MovementMode movementMode = MovementMode.TopDown2d;
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private float noMovementDistance = 0.01f;
     [SerializeField] private float rotationSmoothing = 0.1f;
@@ -23,8 +23,13 @@ public class PlayerMovementController : PlayerController
         moveAction = moveActionRef.action;
         moveAction.Enable();
     }
-    private void OnEnable()
+    protected override void OnEnable()
     {
+        base.OnEnable();
+        if(movementMode == MovementMode.Side2d)
+        {
+            rotationSmoothing = 0;
+        }
         smoothRotation = new SmoothQuaternion(rotationSmoothing, Quaternion.identity);
     }
     private void FixedUpdate()
