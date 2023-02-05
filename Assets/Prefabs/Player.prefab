@@ -90,7 +90,6 @@ GameObject:
   m_Component:
   - component: {fileID: 740540899066580170}
   - component: {fileID: 740540899066580166}
-  - component: {fileID: 740540899066580172}
   - component: {fileID: 740540899066580173}
   - component: {fileID: 740540899066580174}
   - component: {fileID: 740540899066580176}
@@ -152,24 +151,6 @@ MonoBehaviour:
   moveSpeed: 5
   noMovementDistance: 1.25
   rotationSmoothing: 0.1
---- !u!114 &740540899066580172
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 740540899066580165}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 5fea29bb7c508c244a1f805a5fd3fc4d, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  outlineMode: 0
-  outlineColor: {r: 1, g: 0.93891597, b: 0.37169808, a: 0.972549}
-  outlineWidth: 2.47
-  precomputeOutline: 0
-  bakeKeys: []
-  bakeValues: []
 --- !u!114 &740540899066580173
 MonoBehaviour:
   m_ObjectHideFlags: 0

@@ -46,11 +46,7 @@ public class AreaHasOnlyObjectsOfSpecificColorsTaskAction : TaskAction
                 }
             }
         }
-        if (hasAnyColoredObjects)
-        {
-            return true;
-        }
-        return false;
+        return true;
     }
     private bool IsOnlyValidColorsInBoundsColliders(ReadOnlyArray<Collider> colliders)
     {
