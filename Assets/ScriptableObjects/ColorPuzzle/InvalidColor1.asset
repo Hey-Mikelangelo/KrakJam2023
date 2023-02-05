@@ -10,6 +10,6 @@ MonoBehaviour:
   m_Enabled: 1
   m_EditorHideFlags: 0
   m_Script: {fileID: 11500000, guid: 116e5ac475d5b8b44b661284b57df9b1, type: 3}
-  m_Name: FenceColor
+  m_Name: InvalidColor1
   m_EditorClassIdentifier: 
-  value: {r: 0.3288751, g: 0.6792453, b: 0.20121038, a: 1}
+  value: {r: 0, g: 0, b: 0, a: 0}

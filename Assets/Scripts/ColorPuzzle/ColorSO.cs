@@ -1,6 +1,4 @@
-﻿using Sirenix.OdinInspector;
-using UnityEngine;
-
+﻿using UnityEngine;
 [CreateAssetMenu]
 public class ColorSO : ValueSO<Color>
 {

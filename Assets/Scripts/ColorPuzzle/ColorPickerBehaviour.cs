@@ -12,6 +12,8 @@ public class ColorPickerBehaviour : MonoBehaviour
     [SerializeField, Required] private ColorSO colorSO;
     private Color[] buttonsColors;
     private UnityAction[] buttonClickDelegates;
+
+    public IReadOnlyList<Color> Colors => buttonsColors;
     private void Awake()
     {
         buttonsColors = colorSelectButtons.Select(x =>
