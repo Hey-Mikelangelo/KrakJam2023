@@ -1,6 +1,5 @@
 ﻿using Sirenix.OdinInspector;
 using UnityEngine;
-
 public abstract class ValueSO<T> : ScriptableObject
 {
     [ShowInInspector, ReadOnly] public T Value
