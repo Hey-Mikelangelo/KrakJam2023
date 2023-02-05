@@ -25,7 +25,7 @@ MonoBehaviour:
       m_Items:
       - rid: 5384146902942220337
   - m_Id: 535372795977728
-    m_Localized: Obecnie dziadek {name} jest w wieku {age} lat
+    m_Localized: Obecnie dziadek {name} ma {age} lat
     m_Metadata:
       m_Items:
       - rid: 5384146902942220337
