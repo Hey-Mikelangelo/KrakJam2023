@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 32c33b5ca37443a4c982b42777470d11, type: 3}
   m_Name: CodeSequence
   m_EditorClassIdentifier: 
-  value: 01000000020000000300000004000000
+  guid:
+    guidByteArray: 9affaee8f9f25341ba6bce1e37d95e77

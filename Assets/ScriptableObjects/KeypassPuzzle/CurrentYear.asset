@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4c6dce58a199e48b461e2066adcabe, type: 3}
   m_Name: CurrentYear
   m_EditorClassIdentifier: 
-  value: 2023
+  guid:
+    guidByteArray: 047e3df2790a6c4883e31cafa71ea4a3

@@ -1,20 +1,36 @@
 ﻿using Sirenix.OdinInspector;
+using System;
+using System.Collections.Generic;
 using UnityEngine;
 public abstract class ValueSO<T> : ScriptableObject
 {
-    [ShowInInspector, ReadOnly] public T Value
+    [SerializeField] private SerializableGuid guid;
+    private static Dictionary<Guid, ValueSO<T>> guidToInstance = new();
+    [ShowInInspector, ReadOnly]
+    public T Value
     {
-        get => value;
+        get => GetInstance().value;
         set
         {
-            if (this.value != null && this.value.Equals(value))
+            var instance = GetInstance();
+            if (instance.value != null && instance.value.Equals(value))
             {
                 return;
             }
-            this.value = value;
-            OnValueChanged?.Invoke();
+            instance.value = value;
+            instance.OnValueChanged?.Invoke();
         }
     }
-   private T value;
+
+    public ValueSO<T> GetInstance()
+    {
+        if(guidToInstance.TryGetValue(guid, out var valueSO))
+        {
+            return valueSO;
+        }
+        guidToInstance.Add(guid, this);
+        return this;
+    }
+    private T value;
     public event System.Action OnValueChanged;
 }

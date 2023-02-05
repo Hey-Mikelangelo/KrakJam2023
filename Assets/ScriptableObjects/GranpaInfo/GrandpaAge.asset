@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 4a4c6dce58a199e48b461e2066adcabe, type: 3}
   m_Name: GrandpaAge
   m_EditorClassIdentifier: 
-  value: 0
+  guid:
+    guidByteArray: 49ae16ea1e67294396a9611f265f229a

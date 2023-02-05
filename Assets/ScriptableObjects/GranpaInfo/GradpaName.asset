@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 17a32b3a011389f4c8dc290fc00cdc23, type: 3}
   m_Name: GradpaName
   m_EditorClassIdentifier: 
-  value: 
+  guid:
+    guidByteArray: d6256ea3cc1cb349817d4fa41600b88e

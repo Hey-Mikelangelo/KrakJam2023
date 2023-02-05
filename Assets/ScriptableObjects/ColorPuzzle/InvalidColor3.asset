@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116e5ac475d5b8b44b661284b57df9b1, type: 3}
   m_Name: InvalidColor3
   m_EditorClassIdentifier: 
-  value: {r: 0, g: 0, b: 0, a: 0}
+  guid:
+    guidByteArray: 69c53edab451e147a41e404305f113eb

@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116e5ac475d5b8b44b661284b57df9b1, type: 3}
   m_Name: CarCollor
   m_EditorClassIdentifier: 
-  value: {r: 0.9811321, g: 0.12402988, b: 0.12402988, a: 1}
+  guid:
+    guidByteArray: ea3eb3e0e0feb443bddaa6508e446d13

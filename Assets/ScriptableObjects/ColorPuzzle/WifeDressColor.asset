@@ -12,4 +12,5 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: 116e5ac475d5b8b44b661284b57df9b1, type: 3}
   m_Name: WifeDressColor
   m_EditorClassIdentifier: 
-  value: {r: 1, g: 0.90999424, b: 0.14528298, a: 1}
+  guid:
+    guidByteArray: 659d57156861bb4bb6033399870040a6
