@@ -5371,7 +5371,6 @@ GameObject:
   - component: {fileID: 3242470223783540932}
   - component: {fileID: 3242470223783540933}
   - component: {fileID: 3242470223783540934}
-  - component: {fileID: 6015706541660181401}
   m_Layer: 5
   m_Name: KOLOREK
   m_TagString: Untagged
@@ -5702,7 +5701,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6015706541660181401}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AgeLockSequencePickerBehaviour, Assembly-CSharp
         m_MethodName: DecreaseAge
         m_Mode: 1
@@ -5815,7 +5814,7 @@ MonoBehaviour:
   m_OnClick:
     m_PersistentCalls:
       m_Calls:
-      - m_Target: {fileID: 6015706541660181401}
+      - m_Target: {fileID: 0}
         m_TargetAssemblyTypeName: AgeLockSequencePickerBehaviour, Assembly-CSharp
         m_MethodName: IncreaseAge
         m_Mode: 1
@@ -5904,25 +5903,6 @@ CanvasRenderer:
   m_PrefabAsset: {fileID: 0}
   m_GameObject: {fileID: 5910921607436498774}
   m_CullTransparentMesh: 1
---- !u!114 &6015706541660181401
-MonoBehaviour:
-  m_ObjectHideFlags: 0
-  m_CorrespondingSourceObject: {fileID: 0}
-  m_PrefabInstance: {fileID: 0}
-  m_PrefabAsset: {fileID: 0}
-  m_GameObject: {fileID: 3242470223783540935}
-  m_Enabled: 1
-  m_EditorHideFlags: 0
-  m_Script: {fileID: 11500000, guid: 835a5802275fa8d48b5adeecac12eed4, type: 3}
-  m_Name: 
-  m_EditorClassIdentifier: 
-  minMaxAge: {x: 40, y: 100}
-  initialAge: 60
-  ageTextBox: {fileID: 5910921605871870787}
-  ageLockCombinationSO: {fileID: 11400000, guid: f277eb62ad6838f43911b05c842a433f, type: 2}
-  currentYearSO: {fileID: 11400000, guid: 1d0527280bb5ea646ae652d72794a621, type: 2}
-  OnSubmit:
-    _PersistentCalls: []
 --- !u!224 &8341016908602896015
 RectTransform:
   m_ObjectHideFlags: 0

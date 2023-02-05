@@ -19,6 +19,10 @@ namespace InteractionSystem
                 return collider;
             }
         }
+        private void Awake()
+        {
+            _ = Collider;
+        }
         private void Reset()
         {
             this.gameObject.layer = LayerMask.NameToLayer(LayerNames.Interactable);

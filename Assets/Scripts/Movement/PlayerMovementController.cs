@@ -93,6 +93,10 @@ public class PlayerMovementController : PlayerController
 
     private void AlignToDirection(Vector2 direction2d)
     {
+        if(direction2d.magnitude == 0)
+        {
+            return;
+        }
         Vector3 upVector = Vector3.Cross(Vector3.forward, (Vector3)direction2d);
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, upVector);
         smoothRotation.TargetValue = rotation;
