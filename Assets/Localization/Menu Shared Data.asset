@@ -19,6 +19,10 @@ MonoBehaviour:
     m_Key: kliuc
     m_Metadata:
       m_Items: []
+  - m_Id: 535372795977728
+    m_Key: Wiek dziadka
+    m_Metadata:
+      m_Items: []
   m_Metadata:
     m_Items: []
   m_KeyGenerator:

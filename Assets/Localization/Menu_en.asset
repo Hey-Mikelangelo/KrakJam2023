@@ -24,10 +24,15 @@ MonoBehaviour:
     m_Metadata:
       m_Items:
       - rid: 5384146902942220337
+  - m_Id: 535372795977728
+    m_Localized: Dziadek {name} ma {age} lat
+    m_Metadata:
+      m_Items:
+      - rid: 5384146902942220337
   references:
     version: 2
     RefIds:
     - rid: 5384146902942220337
       type: {class: SmartFormatTag, ns: UnityEngine.Localization.Metadata, asm: Unity.Localization}
       data:
-        m_Entries: 00a072a20f000000
+        m_Entries: 00a072a20f00000000a05331ebe60100
