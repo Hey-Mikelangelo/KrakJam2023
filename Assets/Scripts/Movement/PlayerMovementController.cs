@@ -13,6 +13,7 @@ public class PlayerMovementController : PlayerController
     [SerializeField, Required] private InputActionReference moveActionRef;
     [SerializeField, Required] private CameraGuidReference cameraRef;
     [SerializeField] private MovementMode movementMode = MovementMode.TopDown2d;
+    [SerializeField] private float movementDampingPercent = 0;
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private float noMovementDistance = 0.01f;
     [SerializeField] private float rotationSmoothing = 0.1f;
@@ -85,7 +86,7 @@ public class PlayerMovementController : PlayerController
             moveDirection2d.y = 0;
         }
         var moveVector2d = moveDirection2d * moveSpeed;
-        rigidbody.velocity = (Vector3)moveVector2d;
+        rigidbody.velocity = ((Vector3)moveVector2d) * (1 - movementDampingPercent); 
         AlignToDirection(moveVector2d);
     }
 
