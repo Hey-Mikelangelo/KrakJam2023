@@ -721,8 +721,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dalej
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
-  m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
+  m_sharedMaterial: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -1125,7 +1125,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dalej
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1189,7 +1189,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7514031101239987763
@@ -1594,7 +1594,7 @@ MonoBehaviour:
       m_Calls: []
   m_text: Dalej
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -1658,7 +1658,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!1 &7514031102166561890
