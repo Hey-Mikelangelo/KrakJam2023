@@ -29,14 +29,14 @@ public class PlayerMovementController : PlayerController
     protected override void OnEnable()
     {
         base.OnEnable();
-        if(movementMode == MovementMode.Side2d)
+        if (movementMode == MovementMode.Side2d)
         {
             rotationSmoothing = 0;
         }
         smoothRotation = new SmoothQuaternion(rotationSmoothing, Quaternion.identity);
     }
     private void FixedUpdate()
-    {        
+    {
         if (IsInputActive == false)
         {
             return;
@@ -50,7 +50,7 @@ public class PlayerMovementController : PlayerController
         moveDirection2d.Normalize();
         IsMoving = moveDirection2d.magnitude != 0;*/
         var move = moveAction.ReadValue<float>();
-        if(move == 0)
+        if (move == 0)
         {
             return;
         }
@@ -62,7 +62,7 @@ public class PlayerMovementController : PlayerController
         var moveDirection2d = moveDirection.GetVector2WithRemovedValueOnAxis(Axis.Z);
 
         IsMoving = moveDirection2d.magnitude > noMovementDistance;
-        if(IsMoving == false)
+        if (IsMoving == false)
         {
             return;
         }
@@ -96,15 +96,30 @@ public class PlayerMovementController : PlayerController
 
     private void AlignToDirection(Vector2 direction2d)
     {
-        if(direction2d.magnitude == 0)
+        if (direction2d.magnitude == 0)
         {
             return;
         }
-        Vector3 upVector = Vector3.Cross(Vector3.forward, (Vector3)direction2d);
-        Quaternion rotation = Quaternion.LookRotation(Vector3.forward, upVector);
-        smoothRotation.TargetValue = rotation;
+        if (movementMode == MovementMode.TopDown2d)
+        {
+            Vector3 upVector = Vector3.Cross(Vector3.forward, (Vector3)direction2d);
+            Quaternion rotation = Quaternion.LookRotation(Vector3.forward, upVector);
+            smoothRotation.TargetValue = rotation;
+        }
+        else
+        {
+            if (direction2d.x > 0 && transform.localScale.x < 0)
+            {
+                transform.localScale = -transform.localScale;
+            }
+            else if (direction2d.x < 0 && transform.localScale.x > 0)
+            {
+                transform.localScale = -transform.localScale;
+            }
+        }
+
     }
-        
+
     public override void SetActiveCamera()
     {
         Debug.Log("Set active cam");
