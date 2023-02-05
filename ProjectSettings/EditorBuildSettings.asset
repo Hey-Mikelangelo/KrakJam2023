@@ -21,6 +21,9 @@ EditorBuildSettings:
     path: Assets/Scenes/Lookpick.unity
     guid: 458d19e42970a284f9c3d81ca9a16636
   - enabled: 1
+    path: Assets/Scenes/Colors.unity
+    guid: 8495f78511ba4c0409a6dfd61b0d600b
+  - enabled: 1
     path: Assets/Scenes/ColorPuzzleTest.unity
     guid: 03a0f0af10d70ad48846a2dbb0d078e8
   - enabled: 1

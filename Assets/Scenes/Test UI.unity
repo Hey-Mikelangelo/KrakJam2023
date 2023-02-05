@@ -141,7 +141,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &181478885
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -913,6 +913,10 @@ PrefabInstance:
     - target: {fileID: 4241456825955059248, guid: 831e206113fa0b44eb650ae3297e20cb, type: 3}
       propertyPath: m_Name
       value: 3 OPTIONS
+      objectReference: {fileID: 0}
+    - target: {fileID: 4241456825955059248, guid: 831e206113fa0b44eb650ae3297e20cb, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     - target: {fileID: 4241456825955059251, guid: 831e206113fa0b44eb650ae3297e20cb, type: 3}
       propertyPath: m_Camera
@@ -5295,7 +5299,7 @@ GameObject:
   m_Icon: {fileID: 0}
   m_NavMeshLayer: 0
   m_StaticEditorFlags: 0
-  m_IsActive: 1
+  m_IsActive: 0
 --- !u!114 &3828992349347214451
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -5576,6 +5580,10 @@ PrefabInstance:
       propertyPath: m_Name
       value: CHOOSE
       objectReference: {fileID: 0}
+    - target: {fileID: 3584966473857372901, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
+      propertyPath: m_IsActive
+      value: 0
+      objectReference: {fileID: 0}
     - target: {fileID: 3584966473857372902, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
       propertyPath: m_Camera
       value: 
@@ -5666,6 +5674,10 @@ PrefabInstance:
     - target: {fileID: 7275913042388983819, guid: d7a4f1b8925308448b7bb48ac787671f, type: 3}
       propertyPath: m_Name
       value: Dziadzio
+      objectReference: {fileID: 0}
+    - target: {fileID: 7275913042388983819, guid: d7a4f1b8925308448b7bb48ac787671f, type: 3}
+      propertyPath: m_IsActive
+      value: 0
       objectReference: {fileID: 0}
     m_RemovedComponents: []
   m_SourcePrefab: {fileID: 100100000, guid: d7a4f1b8925308448b7bb48ac787671f, type: 3}
@@ -5774,7 +5786,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7635066719564003900, guid: 8929ee42deeebaa419f111ddc5fe8b99, type: 3}
       propertyPath: m_IsActive
-      value: 0
+      value: 1
       objectReference: {fileID: 0}
     - target: {fileID: 7635066719564003903, guid: 8929ee42deeebaa419f111ddc5fe8b99, type: 3}
       propertyPath: m_Camera
