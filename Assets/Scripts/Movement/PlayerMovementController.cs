@@ -9,7 +9,7 @@ public class PlayerMovementController : PlayerController
     [SerializeField] private Rigidbody rigidbody;
     [SerializeField, Required] private InputActionReference moveActionRef;
     [SerializeField, Required] private CameraGuidReference cameraRef;
-    [SerializeField, Required] private MovementModeSO movementModeSO;
+    [SerializeField] private MovementMode movementMode; 
     [SerializeField] private float moveSpeed = 1;
     [SerializeField] private float noMovementDistance = 0.01f;
     [SerializeField] private float rotationSmoothing = 0.1f;
@@ -17,11 +17,11 @@ public class PlayerMovementController : PlayerController
     private InputAction moveAction;
     [ShowInInspector, ReadOnly] public bool IsMoving { get; private set; }
 
-    private void Awake()
+    protected override void Awake()
     {
+        base.Awake();
         moveAction = moveActionRef.action;
         moveAction.Enable();
-        movementModeSO.OnValueChanged += MovementModeSO_OnValueChanged;
     }
     private void OnEnable()
     {
@@ -29,16 +29,15 @@ public class PlayerMovementController : PlayerController
     }
     private void FixedUpdate()
     {        
+        if (IsInputActive == false)
+        {
+            return;
+        }
         if (smoothRotation.Update())
         {
             this.transform.rotation = smoothRotation.Value;
         }
         IsMoving = false;
-        if (IsInputActive == false)
-        {
-            
-            return;
-        }
         /*var moveDirection2d = moveAction.ReadValue<Vector2>();
         moveDirection2d.Normalize();
         IsMoving = moveDirection2d.magnitude != 0;*/
@@ -67,8 +66,11 @@ public class PlayerMovementController : PlayerController
     }
     public void Move(Vector2 moveDirection2d)
     {
+        if (IsInputActive == false)
+        {
+            return;
+        }
         moveDirection2d.Normalize();
-        var movementMode = movementModeSO.Value;
         if (movementMode == MovementMode.Side2d)
         {
             //allow movement only left - right
@@ -79,13 +81,6 @@ public class PlayerMovementController : PlayerController
         AlignToDirection(moveVector2d);
     }
 
-    private void OnDestroy()
-    {
-        if (movementModeSO != null)
-        {
-            movementModeSO.OnValueChanged -= MovementModeSO_OnValueChanged;
-        }
-    }
     private void MovementModeSO_OnValueChanged()
     {
         AlignToDirection(Vector3.right);
@@ -101,9 +96,7 @@ public class PlayerMovementController : PlayerController
         Quaternion rotation = Quaternion.LookRotation(Vector3.forward, upVector);
         smoothRotation.TargetValue = rotation;
     }
-
-
-
+        
     public override void SetActiveCamera()
     {
         Debug.Log("Set active cam");

@@ -4,12 +4,12 @@ using System;
 using System.Collections.Generic;
 using System.Linq;
 using UnityEngine;
-
 public abstract class PlayerController : MonoBehaviour
 {
     [SerializeField, OdinSerialize] private UltEvent<bool> onActivateStateChanged = new UltEvent<bool>();
     [SerializeField] public UltEvent onActivated = new UltEvent();
     [SerializeField] public UltEvent onDeactivated = new UltEvent();
+    [SerializeField] private bool disableOnInit; 
 
     private static List<PlayerController> playerControllers = new List<PlayerController>();
     public static PlayerController ActiveController { get; private set; }
@@ -17,10 +17,17 @@ public abstract class PlayerController : MonoBehaviour
     public bool IsInputActive { get; private set; } = true;
     //protected abstract IInputComponentData InputComponentData { get; }
 
-    private void Awake()
+    protected virtual void Awake()
     {
-        enabled = false;
         playerControllers.Add(this);
+        if (disableOnInit)
+        {
+            enabled = false;
+        }
+        else 
+        {
+            this.ActivateThis();
+        }
     }
     
     private void Start()

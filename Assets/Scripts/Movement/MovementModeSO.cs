@@ -4,7 +4,7 @@ using UnityEngine;
 [CreateAssetMenu]
 public class MovementModeSO : ScriptableSingleton<MovementModeSO>
 {
-    [ShowInInspector]
+    /*[ShowInInspector]
     public MovementMode Value
     {
         get => value;
@@ -17,7 +17,7 @@ public class MovementModeSO : ScriptableSingleton<MovementModeSO>
             this.value = value;
             OnValueChanged?.Invoke();
         }
-    }
+    }*/
     private MovementMode value = MovementMode.Side2d;
     public event System.Action OnValueChanged;
 }

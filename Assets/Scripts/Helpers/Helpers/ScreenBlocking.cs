@@ -4,6 +4,7 @@ using UnityEngine.InputSystem;
 using UnityEngine.SceneManagement;
 using UnityEngine.UI;
 
+
 public static class ScreenBlocking
 {
     private static List<GraphicRaycaster> disabledGraphicRaycasters = new();

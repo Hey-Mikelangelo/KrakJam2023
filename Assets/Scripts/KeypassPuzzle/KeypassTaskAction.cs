@@ -7,7 +7,8 @@ public class KeypassTaskAction : TaskAction
     [SerializeField, Required] private KeypassBehaviour keypassBehaviour;
     [SerializeField, Required] private IntSequenceSO validSequenceSO;
     [ShowInInspector, ReadOnly] private bool isCompleted;
-
+    public UltEvent OnValidSubmit = new();
+    public UltEvent OnNotValidSubmit = new();
     private void Awake()
     {
         keypassBehaviour.OnSubmit += OnSubmit;
@@ -42,6 +43,11 @@ public class KeypassTaskAction : TaskAction
         if (keypassBehaviour.CombinationInput.ItemsSequenceEqual(validSequenceSO.Value))
         {
             isCompleted = true;
+            OnValidSubmit.Invoke();
+        }
+        else
+        {
+            OnNotValidSubmit.Invoke();
         }
 
     }
