@@ -592,7 +592,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: Dziadek ma X lat
+  m_text: Obecnie dziadek ma X lat
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -1470,6 +1470,10 @@ PrefabInstance:
       propertyPath: ageValueSO
       value: 
       objectReference: {fileID: 11400000, guid: da63844f1dd0dbf4097bd2642db34e43, type: 2}
+    - target: {fileID: 5708315398976905518, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: 208
+      objectReference: {fileID: 0}
     - target: {fileID: 5708315398976905519, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1530,6 +1534,10 @@ PrefabInstance:
       propertyPath: m_sharedMaterial
       value: 
       objectReference: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
+    - target: {fileID: 5708315400437816693, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
+      propertyPath: m_AnchoredPosition.x
+      value: -211
+      objectReference: {fileID: 0}
     - target: {fileID: 5708315400437816694, guid: 34e471668f5cdc549b30d845b3e2846b, type: 3}
       propertyPath: m_OnClick.m_PersistentCalls.m_Calls.Array.size
       value: 2
@@ -1970,7 +1978,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: PRZED TOBA HISTORIA TWEGO PRZODKA, PRZYPOMNIJMY JA SOBIE RAZEM
+  m_text: "Wszystko zaczyna si\u0119 od twojego przodka, przypomnijmy go sobie "
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
@@ -3104,8 +3112,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: DZIADEK UWIELBIAL JAK BABCIA UBIERALA ____ SUKIENKE GDYZ BYL TO JEGO ULUBIONY
-    KOLOR
+  m_text: Dziadek
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d1dbe5cb6375a34d855c84d84012a9f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -3510,7 +3517,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JEJ BIZUTERIA CZESTO POWIAZANA TEMATYCNIE BYLA Z
+  m_text: "Z jak\u0105 tematyk\u0105 zwi\u0105zana by\u0142a jej bi\u017Cuteria ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d1dbe5cb6375a34d855c84d84012a9f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -5101,7 +5108,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'JEGO ZONA NAJCZESCIEJ NOSILA '
+  m_text: "Jak\u0105 bi\u017Cuteri\u0119 najch\u0119tniej nosi\u0142a jego \u017Cona
+    ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: 6d1dbe5cb6375a34d855c84d84012a9f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -5363,7 +5371,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "JAK DZIADEK MA NA IMI\u0118?"
+  m_text: "Jak tw\xF3j dziadek ma na imi\u0119 ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 8938382719423873307, guid: 6d1dbe5cb6375a34d855c84d84012a9f, type: 2}
