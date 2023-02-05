@@ -7,6 +7,7 @@ public class LevelChanger : MonoBehaviour
 {
     public Animator transition;
     public float transitionTime = 1f;
+    [SerializeField] private FadingScreen fadingScreen;
     // Update is called once per frame
     void Update()
     {
@@ -17,13 +18,13 @@ public class LevelChanger : MonoBehaviour
     }
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));
+        LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    private async void LoadLevel(int levelIndex)
     {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(transitionTime);
+        await fadingScreen.FadeToBlockingView(transitionTime);
         SceneManager.LoadScene(levelIndex);
+        await fadingScreen.FadeFromBlockingView(transitionTime);
     }
 }

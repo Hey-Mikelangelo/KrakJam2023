@@ -1922,6 +1922,14 @@ PrefabInstance:
   m_Modification:
     m_TransformParent: {fileID: 0}
     m_Modifications:
+    - target: {fileID: 5388903615234111564, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
+      propertyPath: transition
+      value: 
+      objectReference: {fileID: 7601748935829744058, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
+    - target: {fileID: 7601748935829744071, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
+      propertyPath: m_Camera
+      value: 
+      objectReference: {fileID: 1852116482}
     - target: {fileID: 7601748936606240090, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
       propertyPath: m_RootOrder
       value: 0
@@ -1936,7 +1944,7 @@ PrefabInstance:
       objectReference: {fileID: 0}
     - target: {fileID: 7601748936606240090, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
       propertyPath: m_LocalPosition.z
-      value: -62.901756
+      value: 113.3
       objectReference: {fileID: 0}
     - target: {fileID: 7601748936606240090, guid: e66142029a0fb124f92bd4e224090d60, type: 3}
       propertyPath: m_LocalRotation.w
