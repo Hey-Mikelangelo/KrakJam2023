@@ -3342,6 +3342,7 @@ MonoBehaviour:
   ageTextBox: {fileID: 785615154}
   ageLockCombinationSO: {fileID: 11400000, guid: f277eb62ad6838f43911b05c842a433f, type: 2}
   currentYearSO: {fileID: 11400000, guid: 1d0527280bb5ea646ae652d72794a621, type: 2}
+  ageValueSO: {fileID: 0}
   OnSubmit:
     _PersistentCalls: []
 --- !u!114 &1415255312
@@ -4542,8 +4543,8 @@ MonoBehaviour:
       m_Calls: []
   m_text: 'JAK ZAZWYCZAJ WYGLADA JEGO DROGA DO SKLEPU ? '
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
-  m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
+  m_sharedMaterial: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
   m_fontMaterials: []
@@ -4675,10 +4676,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "NAJCZESCIEJ DOSTAJE SI\u0118 TAM PRZY UZYCIU SWOJEGO SAMOCHODZU O KOLORZE
-    ___"
+  m_text: "NAJCZESCIEJ DOSTAJE SI\u0118 TAM PRZY UZYCIU SWOJEGO SAMOCHODZU. JAKI
+    ON MIA\u0141 KOLOR?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -4742,7 +4743,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &757808254506989643
@@ -5227,10 +5228,10 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: BARDZO WAZNY BYL DLA NIEGO WYGLAD JEGO DOMU, MIAL WYPIELEGNOWANY OGROD
-    OTOCZONY PLOTEM O KOLORZE___
+  m_text: "BARDZO WAZNY BYL DLA NIEGO WYGLAD JEGO DOMU, MIAL WYPIELEGNOWANY OGROD
+    OTOCZONY PLOTEM. JAKI KOLOR MIA\u0141O OGRODZENIE?"
   m_isRightToLeft: 0
-  m_fontAsset: {fileID: 11400000, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
+  m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
   m_fontSharedMaterials: []
   m_fontMaterial: {fileID: 0}
@@ -5294,7 +5295,7 @@ MonoBehaviour:
   m_margin: {x: 0, y: 0, z: 0, w: 0}
   m_isUsingLegacyAnimationComponent: 0
   m_isVolumetricText: 0
-  m_hasFontAssetChanged: 0
+  m_hasFontAssetChanged: 1
   m_baseMaterial: {fileID: 0}
   m_maskOffset: {x: 0, y: 0, z: 0, w: 0}
 --- !u!222 &757808255201873989
@@ -6981,6 +6982,7 @@ MonoBehaviour:
   ageTextBox: {fileID: 5910921606691164201}
   ageLockCombinationSO: {fileID: 11400000, guid: f277eb62ad6838f43911b05c842a433f, type: 2}
   currentYearSO: {fileID: 11400000, guid: 1d0527280bb5ea646ae652d72794a621, type: 2}
+  ageValueSO: {fileID: 0}
   OnSubmit:
     _PersistentCalls: []
 --- !u!114 &7284182947005883256
