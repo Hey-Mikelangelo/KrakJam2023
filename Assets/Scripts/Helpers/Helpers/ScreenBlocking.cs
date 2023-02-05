@@ -18,6 +18,7 @@ public static class ScreenBlocking
 
     public static void DisableAllRootGraphicRaycasters(GraphicRaycaster excludeRaycaster = null)
     {
+        return;
         var sceneCount = SceneManager.sceneCount;
         for (int sceneIndex = 0; sceneIndex < sceneCount; sceneIndex++)
         {
@@ -48,6 +49,7 @@ public static class ScreenBlocking
 
     public static void EnableDisabledGraphicRaycasters()
     {
+        return;
         int count = disabledGraphicRaycasters.Count;
         for (int i = 0; i < count; i++)
         {
@@ -62,6 +64,7 @@ public static class ScreenBlocking
 
     public static void DisablePlayerController(object obj)
     {
+        return;
         if (disablingObject != null)
         {
             //Debug.Log("PLayer controller already disabled");
@@ -97,6 +100,7 @@ public static class ScreenBlocking
 
     public static bool EnablePlayerController(object obj)
     {
+        return false;
         if (disablingObject != null && obj != disablingObject)
         {
             //Debug.Log("Not valid object");

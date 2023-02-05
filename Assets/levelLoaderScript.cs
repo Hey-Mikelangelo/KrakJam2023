@@ -2,10 +2,10 @@ using System.Collections;
 using System.Collections.Generic;
 using UnityEngine;
 using UnityEngine.SceneManagement;
-
 public class levelLoaderScript : MonoBehaviour
 {
     public Animator transition;
+    [SerializeField] private FadingScreen fadingScreen;
     public float transitionTime = 1f;
 
     // Update is called once per frame
@@ -15,16 +15,17 @@ public class levelLoaderScript : MonoBehaviour
         {
             LoadNextLevel();
         }
+
     }
     public void LoadNextLevel()
     {
-        StartCoroutine(LoadLevel(SceneManager.GetActiveScene().buildIndex + 1));    
+        LoadLevel(SceneManager.GetActiveScene().buildIndex + 1);
     }
 
-    IEnumerator LoadLevel(int levelIndex)
+    private async void LoadLevel(int levelIndex)
     {
-        transition.SetTrigger("Start");
-        yield return new WaitForSeconds(1);
+        await fadingScreen.FadeToBlockingView(transitionTime);
         SceneManager.LoadScene(levelIndex);
+        await fadingScreen.FadeFromBlockingView(transitionTime);
     }
 }
