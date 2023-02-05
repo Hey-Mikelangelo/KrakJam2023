@@ -2887,7 +2887,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "TEMATYCZNIE JEJ BI\u017BUTERIA CZ\u0118STO NAWI\u0104ZYWA\u0141A DO?"
+  m_text: "Do czego tematycznie najcz\u0119\u015Bciej nawi\u0105zywa\u0142a jej bi\u017Cuteria
+    ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -3826,8 +3827,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "DZIADEK UWIELBIAL JAK BABCIA UBIERALA ____ SUKIENKE W JEGO ULUBIONY KOLORZE.
-    JAKI ON KONKRETNIE BY\u0141?"
+  m_text: "Dziadek uwielbia\u0142 jedn\u0105 sukienk\u0119 babci z uwagi na jej kolor.
+    Jaki by\u0142 to kolor ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -4537,7 +4538,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: JEGO ZONA NAJCZESCIEJ NOSILA?
+  m_text: "Jaki rodzaj bi\u017Cuterii jego \u017Cona najch\u0119tniej nosi\u0142a
+    ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
@@ -4646,6 +4648,7 @@ GameObject:
   - component: {fileID: 2107629093840677106}
   - component: {fileID: 2107629093840677107}
   - component: {fileID: 2107629093840677108}
+  - component: {fileID: 2107629093840677109}
   m_Layer: 5
   m_Name: ColorPicker
   m_TagString: Untagged
@@ -4724,7 +4727,7 @@ MonoBehaviour:
   - {fileID: 2107629095099393880}
   - {fileID: 2107629094256819552}
   - {fileID: 1162275063}
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
 --- !u!114 &2107629093840677108
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -4738,7 +4741,28 @@ MonoBehaviour:
   m_Name: 
   m_EditorClassIdentifier: 
   image: {fileID: 745830804}
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+--- !u!114 &2107629093840677109
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107629093840677104}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832cd92fcea80454fababa02f297dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColorsSO:
+  - {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  - {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
+  - {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  invalidColorsSO:
+  - {fileID: 11400000, guid: d2c60a7f4b2a23b45ad7a36e8dfc29c4, type: 2}
+  - {fileID: 11400000, guid: 1162acc498f129c43a696751b0ec002d, type: 2}
+  - {fileID: 11400000, guid: 41c37ddd2ce89794b90207d3eae87959, type: 2}
+  colorPicker: {fileID: 2107629093840677107}
 --- !u!114 &2107629094256819552
 MonoBehaviour:
   m_ObjectHideFlags: 0

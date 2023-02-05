@@ -515,6 +515,7 @@ GameObject:
   - component: {fileID: 351605119}
   - component: {fileID: 351605123}
   - component: {fileID: 351605122}
+  - component: {fileID: 351605124}
   m_Layer: 5
   m_Name: ColorPicker
   m_TagString: Untagged
@@ -562,7 +563,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 2032907850}
   materialIndex: 1
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
 --- !u!114 &351605120
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -582,7 +583,7 @@ MonoBehaviour:
   - {fileID: 794432606}
   - {fileID: 598050373}
   - {fileID: 246945612}
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
 --- !u!114 &351605121
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -623,7 +624,7 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 454664954}
   materialIndex: 1
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
 --- !u!114 &351605123
 MonoBehaviour:
   m_ObjectHideFlags: 0
@@ -638,7 +639,28 @@ MonoBehaviour:
   m_EditorClassIdentifier: 
   meshRenderer: {fileID: 486612200}
   materialIndex: 1
-  colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  colorSO: {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
+--- !u!114 &351605124
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 351605117}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832cd92fcea80454fababa02f297dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColorsSO:
+  - {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  - {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
+  - {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  invalidColorsSO:
+  - {fileID: 11400000, guid: d2c60a7f4b2a23b45ad7a36e8dfc29c4, type: 2}
+  - {fileID: 11400000, guid: 1162acc498f129c43a696751b0ec002d, type: 2}
+  - {fileID: 11400000, guid: 41c37ddd2ce89794b90207d3eae87959, type: 2}
+  colorPicker: {fileID: 351605120}
 --- !u!1 &368552039 stripped
 GameObject:
   m_CorrespondingSourceObject: {fileID: 77884459140192266, guid: f380869da67affa4f956bb0224309f4a, type: 3}
@@ -3441,6 +3463,7 @@ GameObject:
   - component: {fileID: 1415255313}
   - component: {fileID: 1415255312}
   - component: {fileID: 1415255311}
+  - component: {fileID: 1415255316}
   m_Layer: 5
   m_Name: KOLOREK Plot
   m_TagString: Untagged
@@ -3550,6 +3573,27 @@ RectTransform:
   m_AnchoredPosition: {x: 0, y: 0}
   m_SizeDelta: {x: 0, y: 0}
   m_Pivot: {x: 0, y: 0}
+--- !u!114 &1415255316
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 1415255310}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832cd92fcea80454fababa02f297dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColorsSO:
+  - {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  - {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
+  - {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  invalidColorsSO:
+  - {fileID: 11400000, guid: d2c60a7f4b2a23b45ad7a36e8dfc29c4, type: 2}
+  - {fileID: 11400000, guid: 1162acc498f129c43a696751b0ec002d, type: 2}
+  - {fileID: 11400000, guid: 41c37ddd2ce89794b90207d3eae87959, type: 2}
+  colorPicker: {fileID: 351605120}
 --- !u!1 &1448442179
 GameObject:
   m_ObjectHideFlags: 0
@@ -4785,7 +4829,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: 'JAK ZAZWYCZAJ WYGLADA JEGO DROGA DO SKLEPU ? '
+  m_text: "Poza sukienk\u0105 dziadek przywi\u0105zywa\u0142 du\u017C\u0105 uwag\u0119
+    do kolor\xF3w r\xF3\u017Cnych przedmiot\xF3w."
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: -3472014521379026606, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
@@ -4920,8 +4965,8 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "NAJCZESCIEJ DOSTAJE SI\u0118 TAM PRZY UZYCIU SWOJEGO SAMOCHODZU. JAKI
-    ON MIA\u0141 KOLOR?"
+  m_text: "Ka\u017Cdy jego samoch\xF3d musia\u0142 posiada\u0107 karoseri\u0119 w
+    tym samym kolorze. Jaki by\u0142 to kolor ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -5118,6 +5163,18 @@ MonoBehaviour:
           m_IntArgument: 0
           m_FloatArgument: 0
           m_StringArgument: HIDE-HINT
+          m_BoolArgument: 0
+        m_CallState: 2
+      - m_Target: {fileID: 1415255316}
+        m_TargetAssemblyTypeName: InvalidColorsSetterBehaviour, Assembly-CSharp
+        m_MethodName: SetInvalidColors
+        m_Mode: 1
+        m_Arguments:
+          m_ObjectArgument: {fileID: 0}
+          m_ObjectArgumentAssemblyTypeName: UnityEngine.Object, UnityEngine
+          m_IntArgument: 0
+          m_FloatArgument: 0
+          m_StringArgument: 
           m_BoolArgument: 0
         m_CallState: 2
       - m_Target: {fileID: 2106175784}
@@ -5472,8 +5529,7 @@ MonoBehaviour:
   m_OnCullStateChanged:
     m_PersistentCalls:
       m_Calls: []
-  m_text: "BARDZO WAZNY BYL DLA NIEGO WYGLAD JEGO DOMU, MIAL WYPIELEGNOWANY OGROD
-    OTOCZONY PLOTEM. JAKI KOLOR MIA\u0141O OGRODZENIE?"
+  m_text: "A jaki kolor wybra\u0142 \u017Ceby pomalowa\u0107 sw\xF3j p\u0142ot ?"
   m_isRightToLeft: 0
   m_fontAsset: {fileID: 11400000, guid: c12873a6c8e78ef4580dad26af001b2f, type: 2}
   m_sharedMaterial: {fileID: 3174039664827043486, guid: 8b328ba9f76b6e8468b140870761b22d, type: 2}
@@ -6436,6 +6492,7 @@ GameObject:
   - component: {fileID: 2107629095231183768}
   - component: {fileID: 2107629095231183769}
   - component: {fileID: 2107629095231183774}
+  - component: {fileID: 2107629095231183775}
   m_Layer: 5
   m_Name: ColorPicker
   m_TagString: Untagged
@@ -6484,6 +6541,27 @@ MonoBehaviour:
   meshRenderer: {fileID: 588258610}
   materialIndex: 1
   colorSO: {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+--- !u!114 &2107629095231183775
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 2107629095231183770}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 832cd92fcea80454fababa02f297dea0, type: 3}
+  m_Name: 
+  m_EditorClassIdentifier: 
+  validColorsSO:
+  - {fileID: 11400000, guid: bc79453ea762cc845ae15d0d1750f94d, type: 2}
+  - {fileID: 11400000, guid: 44c6f336c52a05241b092a2a7161f2b4, type: 2}
+  - {fileID: 11400000, guid: 781c9034ac9c77b409f957134091fefb, type: 2}
+  invalidColorsSO:
+  - {fileID: 11400000, guid: d2c60a7f4b2a23b45ad7a36e8dfc29c4, type: 2}
+  - {fileID: 11400000, guid: 1162acc498f129c43a696751b0ec002d, type: 2}
+  - {fileID: 11400000, guid: 41c37ddd2ce89794b90207d3eae87959, type: 2}
+  colorPicker: {fileID: 2107629095231183769}
 --- !u!114 &2107629095687992904
 MonoBehaviour:
   m_ObjectHideFlags: 0
