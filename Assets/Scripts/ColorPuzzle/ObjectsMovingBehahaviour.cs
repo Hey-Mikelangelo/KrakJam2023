@@ -34,9 +34,13 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
         startMovingAction.Disable();
         stopMovingAction.Disable();
     }
-    private void Update()
+    private void FixedUpdate()
     {
         smoothPosition.Update();
+        if (prevMovedInteractable != null && prevMovedInteractable.TryGetComponent(out Rigidbody prevRigidbody))
+        {
+            prevRigidbody.velocity = Vector3.zero;
+        }
         var selectedInteractable = InteractableSelection.SelectedInteractable;
         if(selectedInteractable != null && selectedInteractable.TryGetComponent(out MovableObjectTag _) == false)
         {
@@ -65,10 +69,20 @@ public class ObjectsMovingBehahaviour : MonoBehaviour
             }
             var pickedObjectPosition = playerController.transform.position + toPointerVector;
             smoothPosition.TargetValue = pickedObjectPosition;
-            selectedInteractable.transform.position = smoothPosition.Value;
+            if(selectedInteractable.TryGetComponent(out Rigidbody rigidbody))
+            {
+                rigidbody.velocity = (smoothPosition.Value - rigidbody.position) / Time.deltaTime;
+            }
+            else
+            {
+                selectedInteractable.transform.position = smoothPosition.Value;
+            }
         }
     }
-
+    private void LateUpdate()
+    {
+        
+    }
     private Vector3 GetPointerPosition()
     {
         var ray = RaycastUtils.GetMousePositionRay(cameraRef.Component);
